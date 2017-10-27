@@ -13,6 +13,7 @@ WriteMakefile(
         bugtracker  => 'https://github.com/memowe/Algorithm-MyersDiff/issues',
     }},
     PREREQ_PM       => {
+        'Mo'    => '0.40',
     },
     test => {TESTS => 't/*.t'},
 );
