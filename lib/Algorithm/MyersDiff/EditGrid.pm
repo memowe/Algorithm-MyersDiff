@@ -32,7 +32,7 @@ sub reachable {
         or $to->[1] == $from->[1] + 1 and $to->[0] == $from->[0];
 
     # Diagonally iff the two characters are the same
-    my $first_to    = substr $self->first, $to->[0] - 1, 1;
+    my $first_to    = substr $self->first,  $to->[0] - 1, 1;
     my $second_to   = substr $self->second, $to->[1] - 1, 1;
     return 1
         if $to->[0] == $from->[0] + 1 and $to->[1] == $from->[1] + 1
