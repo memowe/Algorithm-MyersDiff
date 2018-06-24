@@ -1,11 +1,9 @@
 package Algorithm::MyersDiff::EditGrid;
-use Mo qw(is required);
 
 use strict;
 use warnings;
 
-has first   => (is => 'ro', required => 1);
-has second  => (is => 'ro', required => 1);
+use Class::Tiny qw(first second);
 
 # Tells if two vertices in this grid are reachable directly.
 # Expects vertices to be given as [x-coordinate, y-coordinate].
