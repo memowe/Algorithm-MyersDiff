@@ -9,15 +9,11 @@ WriteMakefile(
     NAME            => 'TagNotes',
     AUTHOR          => 'Mirko Westermeier <mirko@westermeier.de>',
     LICENSE         => 'mit',
+    PREREQ_PM       => {'Class::Tiny' => '1.006'},
+    TEST_REQUIRES   => {'Test::Exception' => '0.43'},
     META_MERGE      => {resources => {
         repository  => 'https://github.com/memowe/Algorithm-MyersDiff',
         bugtracker  => 'https://github.com/memowe/Algorithm-MyersDiff/issues',
     }},
-    PREREQ_PM       => {
-        'Class::Tiny' => '1.006',
-    },
-    TEST_REQUIRES   => {
-        'Test::Exception' => '0.43',
-    },
     test => {TESTS => 't/*.t'},
 );
