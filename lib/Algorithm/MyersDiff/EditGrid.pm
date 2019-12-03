@@ -2,13 +2,14 @@ package Algorithm::MyersDiff::EditGrid;
 
 use strict;
 use warnings;
+use feature 'signatures';
+no warnings 'experimental::signatures';
 
 use Class::Tiny qw(first second);
 
 # Tells if two vertices in this grid are reachable directly.
 # Expects vertices to be given as [x-coordinate, y-coordinate].
-sub reachable {
-    my ($self, $from, $to) = @_;
+sub reachable ($self, $from, $to) {
 
     # Check lengths
     die "Illegal lengths\n"
