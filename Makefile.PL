@@ -15,5 +15,8 @@ WriteMakefile(
     PREREQ_PM       => {
         'Class::Tiny' => '1.006',
     },
+    TEST_REQUIRES   => {
+        'Test::Exception' => '0.43',
+    },
     test => {TESTS => 't/*.t'},
 );
