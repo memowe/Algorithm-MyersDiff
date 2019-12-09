@@ -52,4 +52,12 @@ subtest 'Reachability' => sub {
     };
 };
 
+subtest 'Edit Paths' => sub {
+
+    subtest 'Trivial' => sub {
+
+        ok 1;
+    };
+};
+
 done_testing;
