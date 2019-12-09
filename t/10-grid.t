@@ -12,8 +12,8 @@ subtest 'Reachability' => sub {
 
     # Prepare dummy grid
     my $grid = Algorithm::MyersDiff::EditGrid->new(
-        first   => 'foobar',
-        second  => 'bazquux',
+        before  => 'foobar',
+        after   => 'bazquux',
     );
 
     subtest 'Illegal lengths' => sub {

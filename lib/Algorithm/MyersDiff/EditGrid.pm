@@ -5,7 +5,7 @@ use warnings;
 use feature 'signatures';
 no warnings 'experimental::signatures';
 
-use Class::Tiny qw(first second);
+use Class::Tiny qw(before after);
 
 # Tells if two vertices in this grid are reachable directly.
 # Expects vertices to be given as [x-coordinate, y-coordinate].
@@ -14,13 +14,13 @@ sub reachable ($self, $from, $to) {
     # Check lengths
     die "Illegal lengths\n"
         if $from->[0]   < 0
-        or $from->[0]   > length $self->first
+        or $from->[0]   > length $self->before
         or $from->[1]   < 0
-        or $from->[1]   > length $self->second
+        or $from->[1]   > length $self->after
         or $to->[0]     < 0
-        or $to->[0]     > length $self->first
+        or $to->[0]     > length $self->before
         or $to->[1]     < 0
-        or $to->[1]     > length $self->second;
+        or $to->[1]     > length $self->after;
 
     # Check for monotone direction
     die "Direction not monotone:"
@@ -33,11 +33,11 @@ sub reachable ($self, $from, $to) {
         or $to->[1] == $from->[1] + 1 and $to->[0] == $from->[0];
 
     # Diagonally iff the two characters are the same
-    my $first_to    = substr $self->first,  $to->[0] - 1, 1;
-    my $second_to   = substr $self->second, $to->[1] - 1, 1;
+    my $before_to   = substr $self->before, $to->[0] - 1, 1;
+    my $after_to    = substr $self->after,  $to->[1] - 1, 1;
     return 1
         if $to->[0] == $from->[0] + 1 and $to->[1] == $from->[1] + 1
-        and $first_to eq $second_to;
+        and $before_to eq $after_to;
 
     # Not reachable otherwise
     return;
